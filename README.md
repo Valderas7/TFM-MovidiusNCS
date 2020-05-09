@@ -1,8 +1,5 @@
 # Movidius-NCS
-Estudio comparativo del rendimiento de una red neuronal profunda en una Raspberry Pi con Movidius Neural Compute Stick y sin él. Para ello se tienen tres máquinas virtuales en VMWare:
-- Ubuntu 64-bit: Tiene OpenVINO instalado pero no se entrena la red ya que lo hace lentamente. Tiene instalado TF 1.2.
-- MovidiusNCS: Realiza el entreno ya que lo hace de forma muy rápida y tiene OpenVINO. Tiene instalado TF 2.0 (desventaja para sesiones)
-- NCS: Tiene OpenVINO instalado y no se entrena (lento) Tiene instalado TF 1.2.
+Estudio comparativo del rendimiento de una red neuronal profunda en una Raspberry Pi con Movidius Neural Compute Stick y sin él. 
 
 **IMPORTANTE:** 
 - Model Optimizer v10 en PC.
