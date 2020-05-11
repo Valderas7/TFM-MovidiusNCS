@@ -3,7 +3,7 @@ Estudio comparativo del rendimiento de una red neuronal profunda en una Raspberr
 
 **IMPORTANTE:** 
 - Model Optimizer v10 en PC.
-- Model Optimizer v7 en RPi.
+- Model Optimizer v7 en RPi. (2019.3.334)
 
 
 ## Tutorial:
