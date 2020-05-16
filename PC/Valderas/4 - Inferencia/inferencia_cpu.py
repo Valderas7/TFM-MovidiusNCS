@@ -42,5 +42,14 @@ for i in range(len(imagenes)):
     # Se imprime por pantalla salida y la probabilidad. La salida de la red da un valor dentro del intervalo (0-1).
     if out[0] > 0.5: # Cuanto más cerca del '1', más probable que la imagen sea de un perro.
       print('La imagen es de un: Perro (Probabilidad: {:.4}%)\n'.format(out[0][np.argmax(out)]*100))
+      texto = "Perro (Probabilidad: {:.4}%)".format(out[0][np.argmax(out)]*100) # Mostrar imagen en pantalla
+      cv2.putText(imagenes[i], texto, (5, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2) #
+      cv2.imshow("Imagen", imagenes[i]) #
+      cv2.waitKey(0) #
     else: # Cuanto mas cerca del '0', más probable que la imagen sea de un gato.
       print('La imagen es de un: Gato (Probabilidad: {:.4}%)\n'.format(100-out[0][np.argmax(out)]*100))
+      texto = "Gato (Probabilidad: {:.4}%)".format(100-out[0][np.argmax(out)]*100) # Mostrar imagen en pantalla
+      cv2.putText(imagenes[i], texto, (5, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2) #
+      cv2.imshow("Imagen", imagenes[i]) #
+      cv2.waitKey(0) #
+cv2.destroyAllWindows()
