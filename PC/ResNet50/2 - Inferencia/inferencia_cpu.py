@@ -11,7 +11,7 @@ filas = open('/home/user/T-F-M/resnet50/modelos/labels.txt').read().strip().spli
 clases = [r[r.find(" ") + 1:].split(",")[0] for r in filas] # Recoge las clases por cada fila
 
 # Se especifica el directorio principal y se crea un array para recopilar las imágenes:
-directorio = "/home/user/T-F-M/vgg16/test"
+directorio = "/home/user/T-F-M/resnet50/test"
 imagenes = []
 
 # Se carga la red preentrenada:
