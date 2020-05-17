@@ -15,7 +15,7 @@ directorio = "/home/user/T-F-M/resnet50/test"
 imagenes = []
 
 # Se carga la red preentrenada:
-red = cv2.dnn.readNetFromCaffe('/home/user/T-F-M/resnet50/modelos/vgg16.prototxt', '/home/user/T-F-M/resnet50/modelos/vgg16.caffemodel')
+red = cv2.dnn.readNetFromCaffe('/home/user/T-F-M/resnet50/modelos/resnet-50.prototxt', '/home/user/T-F-M/resnet50/modelos/resnet-50.caffemodel')
 
 # Se especifica el dispositivo objetivo (CPU):
 red.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
