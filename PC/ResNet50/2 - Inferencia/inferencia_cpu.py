@@ -7,7 +7,7 @@ import numpy as np # Manipular arrays
 import time # Medir el tiempo de ejecución
 
 # Se carga el documento de clases de Imagenet:
-filas = open('/home/user/T-F-M/vgg16/modelos/labels.txt').read().strip().split("\n") # Divide en filas el documento
+filas = open('/home/user/T-F-M/resnet50/modelos/labels.txt').read().strip().split("\n") # Divide en filas el documento
 clases = [r[r.find(" ") + 1:].split(",")[0] for r in filas] # Recoge las clases por cada fila
 
 # Se especifica el directorio principal y se crea un array para recopilar las imágenes:
@@ -15,7 +15,7 @@ directorio = "/home/user/T-F-M/vgg16/test"
 imagenes = []
 
 # Se carga la red preentrenada:
-red = cv2.dnn.readNetFromCaffe('/home/user/T-F-M/vgg16/modelos/vgg16.prototxt', '/home/user/T-F-M/resnet50/modelos/vgg16.caffemodel')
+red = cv2.dnn.readNetFromCaffe('/home/user/T-F-M/resnet50/modelos/vgg16.prototxt', '/home/user/T-F-M/resnet50/modelos/vgg16.caffemodel')
 
 # Se especifica el dispositivo objetivo (CPU):
 red.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
