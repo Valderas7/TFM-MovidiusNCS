@@ -1,1 +1,0 @@
-El archivo '.bin' y el archivo '.caffemodel' son demasiado grandes para subirlos a GitHub.
