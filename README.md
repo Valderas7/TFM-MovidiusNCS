@@ -16,6 +16,6 @@ Estudio comparativo del rendimiento de una red neuronal profunda en una Raspberr
 
 **RED NEURONAL PRE-ENTRENADA:** 
 1. Ejecutar el script 'downloader.py' de OpenVINO, el cual descarga las topologías de las red pre-entrenadas. Se descargarán así los archivos 'caffemodel' y '.prototxt' en caso del entorno Caffe; o el archivo 'pb' en caso de trabajar con el entorno Tensorflow.
-2. Convertir estos archivos en dos archivos de representación intermedia ('.xml' y '.bin') mediante el Model Optimizer de OpenVINO (python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model <models_dir>/classification/xxxx/xxxx.caffemodel --data_type FP32 --output_dir <ir_dir>
+2. Convertir estos archivos en dos archivos de representación intermedia ('.xml' y '.bin') mediante el Model Optimizer de OpenVINO (python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model <models_dir>/classification/xxxx/xxxx.caffemodel --data_type FP32 --output_dir <ir_dir> (hecho con Model Optimizer v7).
 3. Copiar el archivo de texto '.txt' con todas las clases entrenadas en Imagenet al directorio del modelo.
 4. Ejecutar el script de Python que realiza la inferencia en el NCS utilizando los archivos '.bin' y '.xml'; o el script de Python que realiza la inferencia en la CPU utilizando los archivos '.pb' y '.pbtxt (Tensorflow) o '.caffemodel' y '.prototxt' (Caffe), ya sea en PC o en la Raspberry Pi.
