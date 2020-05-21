@@ -22,9 +22,8 @@ red.setPreferableTarget(cv2.dnn.DNN_TARGET_MYRIAD)
 
 # Se imprime la lista de imágenes, se leen cada una de ellas y se van añadiendo a la lista:
 for dirPath, dirNames, fileNames in os.walk(directorio): # Genera los nombres de los archivos
-    print('Lista de archivos:') 
+    print('Leyendo archivos...') 
     for f in fileNames:
-        print(os.path.join(dirPath, f))        
         imagen = cv2.imread(os.path.join(dirPath, f)) # Se lee una imagen dentro del directorio establecido
  # Transformar imagen a formato float32 y se escalan los píxeles con valores entre (0-1)
         imagenes.append(imagen) # La imagen se añade al array           
