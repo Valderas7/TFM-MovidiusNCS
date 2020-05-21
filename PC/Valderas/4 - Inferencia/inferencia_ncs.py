@@ -18,9 +18,8 @@ imagenes = []
 
 # Se imprime la lista de imágenes, se leen cada una de ellas y se van añadiendo a la lista:
 for dirPath, dirNames, fileNames in os.walk(directorio): # Genera los nombres de los archivos
-    print('Lista de archivos:') 
-    for f in fileNames:
-        print(os.path.join(dirPath, f))        
+    print('Leyendo archivos...') 
+    for f in fileNames:     
         img = cv2.imread(os.path.join(dirPath, f)) # Se lee una imagen dentro del directorio establecido
         img = img.astype('float32') / 255 # Transformar imagen en formato float32 y se escalan los píxeles con valores entre (0-1)
         imagenes.append(img) # La imagen se añade al array           
