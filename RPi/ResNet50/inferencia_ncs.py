@@ -10,21 +10,22 @@ import time # Medir el tiempo de ejecución
 filas = open('/home/pi/T-F-M/resnet50/modelos/labels.txt').read().strip().split("\n") # Divide en filas el documento
 clases = [r[r.find(" ") + 1:].split(",")[0] for r in filas] # Recoge las clases por cada fila
 
-# Se especifica el directorio principal y se crea un array para recopilar las imágenes:
+# Se especifica el directorio principal y se crea un array para recopilar las imágenes y los tiempos:
 directorio = "/home/pi/T-F-M/resnet50/test"
 imagenes = []
+tiempos = []
 
 # Se carga la red preentrenada:
-red = cv2.dnn.readNet('/home/pi/T-F-M/resnet50/modelos/resnet-50.bin', '/home/pi/T-F-M/resnet50/modelos/resnet-50.xml')
+red = cv2.dnn.readNet('/home/pi/T-F-M/resnet50/modelos/resnet-50.xml', '/home/pi/T-F-M/resnet50/modelos/resnet-50.bin')
 
 # Se especifica el dispositivo objetivo (MYRIAD):
+red.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
 red.setPreferableTarget(cv2.dnn.DNN_TARGET_MYRIAD)
 
 # Se imprime la lista de imágenes, se leen cada una de ellas y se van añadiendo a la lista:
 for dirPath, dirNames, fileNames in os.walk(directorio): # Genera los nombres de los archivos
-    print('Lista de archivos:') 
+    print('Leyendo archivos...') 
     for f in fileNames:
-        print(os.path.join(dirPath, f))        
         imagen = cv2.imread(os.path.join(dirPath, f)) # Se lee una imagen dentro del directorio establecido
  # Transformar imagen a formato float32 y se escalan los píxeles con valores entre (0-1)
         imagenes.append(imagen) # La imagen se añade al array           
@@ -45,6 +46,8 @@ for j in range(len(imagenes)):
     resultado = red.forward()
     final = time.time()
     print("[Info] El tiempo de ejecución fue de {:.3} segundos".format(final - inicio))
+    if j>0: # Dentro del array se excluye la 1ra clasificación (solo del 2do elemento del array al final)
+      tiempos.append(final - inicio)
 
     # Ordena los índices de probabilidades en orden descendente (Top1 predicciones):
     resultado = resultado.reshape((1, 1000))
@@ -62,3 +65,13 @@ for j in range(len(imagenes)):
             cv2.putText(imagenes[j], texto, (5, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
             cv2.imshow("Imagen", imagenes[j])
             cv2.waitKey(0)
+
+# Se crean variables para crear las estadísticas finales:
+media = np.mean(tiempos) # Media 
+minimo = np.min(tiempos) # Tiempo más rápido
+maximo = np.max(tiempos) # Tiempo más lento
+
+# Se imprime por pantalla la media, y la clasificación más rápida y más lenta:
+print('[Info] La media de clasificación de la red neuronal es de {:.3} segundos.'.format(media))
+print('[Info] La clasificación más rápida ha sido de {:.3} segundos.'.format(minimo))
+print('[Info] La clasificación más lenta ha sido de de {:.3} segundos.\n'.format(maximo))
