@@ -64,4 +64,4 @@ maximo = np.max(tiempos) # Tiempo más lento
 # Se imprime por pantalla la media, y la clasificación más rápida y más lenta:
 print('[Info] La media de clasificación de la red neuronal es de {:.3} segundos.'.format(media))
 print('[Info] La clasificación más rápida ha sido de {:.3} segundos.'.format(minimo))
-print('[Info] La clasificación más lenta ha sido de de {:.3} segundos.\n'.format(maximo))
+print('[Info] La clasificación más lenta ha sido de {:.3} segundos.\n'.format(maximo))
