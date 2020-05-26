@@ -11,37 +11,31 @@ excel = pd.read_excel('/home/user/T-F-M/boxplots/TFM_grafica.xlsx')
 excel.head()
 
 # Se crean los boxplots:
-grafica_CPU = pd.DataFrame(data = excel, columns = ['Valderas_CPU','DenseNet121_CPU','DenseNet169_CPU','ResNet50_CPU'])
-sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_CPU))
-plt.xlabel('Redes')
+grafica_Val = pd.DataFrame(data = excel, columns = ['Valderas_CPU','Valderas_GPU','Valderas_RPi','Valderas_RPi_NCS'])
+sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_Val))
+plt.title('Clasificador de perros vs gatos (1.3M parámetros)')
+plt.xlabel('Modo de ejecución')
 plt.ylabel('Tiempo de respuesta (s)')
 plt.show()
 
-grafica_GPU = pd.DataFrame(data = excel, columns = ['Valderas_GPU','DenseNet121_GPU','DenseNet169_GPU','ResNet50_GPU'])
-sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_GPU))
-plt.xlabel('Redes')
+grafica_dn121 = pd.DataFrame(data = excel, columns = ['DenseNet121_CPU','DenseNet121_GPU','DenseNet121_RPi','DenseNet121_RPi_NCS'])
+sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_dn121))
+plt.title('DenseNet121 (8M parámetros)')
+plt.xlabel('Modo de ejecución')
 plt.ylabel('Tiempo de respuesta (s)')
 plt.show()
 
-grafica_RPi = pd.DataFrame(data = excel, columns = ['Valderas_RPi','DenseNet121_RPi','DenseNet169_RPi','ResNet50_RPi'])
-sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_RPi))
-plt.xlabel('Redes')
+grafica_dn169 = pd.DataFrame(data = excel, columns = ['DenseNet169_CPU','DenseNet169_GPU','DenseNet169_RPi','DenseNet169_RPi_NCS'])
+sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_dn169))
+plt.title('DenseNet169 (14.3 M parámetros)')
+plt.xlabel('Modo de ejecución')
 plt.ylabel('Tiempo de respuesta (s)')
 plt.show()
 
-grafica_RPi_NCS = pd.DataFrame(data = excel, columns = ['Valderas_RPi_NCS','DenseNet121_RPi_NCS','DenseNet169_RPi_NCS','ResNet50_RPi_NCS'])
-sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_RPi_NCS))
-plt.xlabel('Redes')
+grafica_rn50 = pd.DataFrame(data = excel, columns = ['ResNet50_CPU','ResNet50_GPU','ResNet50_RPi','ResNet50_RPi_NCS'])
+sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_rn50))
+plt.title('ResNet50 (25.6M parámetros)')
+plt.xlabel('Modo de ejecución')
 plt.ylabel('Tiempo de respuesta (s)')
 plt.show()
-
-grafica_total = pd.DataFrame(data = excel, columns = ['Valderas_CPU','DenseNet121_CPU','DenseNet169_CPU','ResNet50_CPU',
-'Valderas_GPU','DenseNet121_GPU','DenseNet169_GPU','ResNet50_GPU',
-'Valderas_RPi','DenseNet121_RPi','DenseNet169_RPi','ResNet50_RPi',
-'Valderas_RPi_NCS','DenseNet121_RPi_NCS','DenseNet169_RPi_NCS','ResNet50_RPi_NCS'])
-sns.boxplot(x="variable", y="value", width=0.7, palette="colorblind", data=pd.melt(grafica_total))
-plt.xlabel('Redes')
-plt.ylabel('Tiempo de respuesta (s)')
-plt.show()
-
 
