@@ -2,7 +2,7 @@
 Estudio comparativo del rendimiento de una red neuronal profunda en una Raspberry Pi con Movidius Neural Compute Stick y sin él. 
 
 **IMPORTANTE:** 
-- Model Optimizer v10 en PC.
+- Model Optimizer v10 en PC. (2019.3.334 - MovidiusNCS)
 - Model Optimizer v7 en RPi. (2019.3.334)
 
 
