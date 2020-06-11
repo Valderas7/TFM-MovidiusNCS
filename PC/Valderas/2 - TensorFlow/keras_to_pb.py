@@ -42,5 +42,5 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
 grafo_exportado = freeze_session(K.get_session(),
                               output_names=[out.op.name for out in modelo.outputs])
 
-# Se escribe el modelo de salida '.pb', guardandolo en el sistema de archivos del PC:
+# Se escribe el modelo de salida '.pb', guardándolo en el sistema de archivos del PC:
 tf.train.write_graph(grafo_exportado, "modelo", "modelo.pb", as_text=False)
