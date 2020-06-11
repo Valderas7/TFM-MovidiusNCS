@@ -15,7 +15,7 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
     """ Congela el estado de una sesión y crea un modelo computacional.
     Se crea un nuevo modelo donde los nodos variables se reemplazan por
     constantes con su valor actual en la sesión. Este nuevo modelo será reducido, 
-    de forma que la información no necesarios para la salida del modelo será eliminada.
+    de forma que la información no necesaria para la salida del modelo será eliminada.
 
     @param session: La sesión de TensorFlow que será exportada.
     @param keep_var_names: Una lista de nombres de variables que no serán exportadas;
