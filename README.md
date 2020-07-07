@@ -1,9 +1,8 @@
 # Movidius-NCS
-Estudio comparativo del rendimiento de una red neuronal profunda en una Raspberry Pi con Movidius Neural Compute Stick y sin él. 
+Estudio comparativo de un clasificador de imágenes en Raspberry Pi, de forma que se compara el tiempo de la inferencia en la Raspberry Pi con y sin el Neural Compute Stick (NCS). También se estudia como la complejidad de una red neuronal repercute en el tiempo de inferencia y se analiza si los tiempos obtenidos con el NCS en la Raspberry Pi se igualan a los conseguidos por la CPU del portátil y a los de una GPU de Google Colab.  
 
 **IMPORTANTE:** 
-- Model Optimizer v10 en PC. (2019.3.334 - MovidiusNCS)
-- Model Optimizer v7 en RPi. (2019.3.334)
+- Model Optimizer misma versión en PC y Raspberry Pi.
 
 
 ## Guías
