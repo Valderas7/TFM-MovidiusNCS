@@ -18,7 +18,7 @@ tiempos = []
 # Se carga la red preentrenada:
 red = cv2.dnn.readNetFromCaffe('/home/pi/T-F-M/densenet169/modelos/densenet-169.prototxt', '/home/pi/T-F-M/densenet169/modelos/densenet-169.caffemodel')
 
-# Se especifica el dispositivo objetivo (CPU):
+# Se especifica el dispositivo objetivo (RPi):
 red.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 red.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
