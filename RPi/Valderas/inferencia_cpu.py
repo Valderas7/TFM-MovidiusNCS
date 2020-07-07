@@ -9,7 +9,7 @@ import time # Medir el tiempo de ejecución
 # Se carga el modelo:
 red = cv2.dnn.readNetFromTensorflow('/home/pi/T-F-M/Valderas/modelos/modelo.pb', '/home/pi/T-F-M/Valderas/modelos/modelo.pbtxt') 
 
-# Se especifica el dispositivo objetivo (CPU):
+# Se especifica el dispositivo objetivo (RPi):
 red.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 red.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
