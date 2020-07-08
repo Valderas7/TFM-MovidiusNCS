@@ -27,7 +27,6 @@ for dirPath, dirNames, fileNames in os.walk(directorio): # Genera los nombres de
     print('Leyendo archivos...') 
     for f in fileNames:
         imagen = cv2.imread(os.path.join(dirPath, f)) # Se lee una imagen dentro del directorio establecido
- # Transformar imagen a formato float32 y se escalan los píxeles con valores entre (0-1)
         imagenes.append(imagen) # La imagen se añade al array           
 print('[Info] Todas las imágenes han sido leídas\n')
 
