@@ -1,12 +1,12 @@
 # MovidiusNCS
 Estudio comparativo de un clasificador de imágenes en Raspberry Pi, de forma que se compara el tiempo de la inferencia en la Raspberry Pi con y sin el Neural Compute Stick (NCS). También se estudia como la complejidad de una red neuronal repercute en el tiempo de inferencia y se analiza si los tiempos obtenidos con el NCS en la Raspberry Pi se igualan a los conseguidos por la CPU del portátil y a los de una GPU de Google Colab.
 
-[========]
+------------
 
 ##### IMPORTANTE:
 - *Model Optimizer* misma versión en PC y Raspberry Pi para que no haya problemas de incompatibilidad.
 
-[========]
+------------
 
 
 ## Guías
@@ -21,7 +21,7 @@ Estudio comparativo de un clasificador de imágenes en Raspberry Pi, de forma qu
 
 5. Ejecutar el *script* de Python que realiza la inferencia en el *Neural Compute Stick* utilizando los archivos '.bin' y '.xml'; o el *script* de Python que realiza la inferencia en la CPU (tanto en el PC como en la Raspberry Pi) o en la GPU de Colab utilizando los archivos '.pb' y '.pbtxt.
 
-[========]
+------------
 
 **Redes neuronales pre-entrendas:**
 1. Ejecutar el script 'downloader.py' de OpenVINO, el cual descarga las topologías de las red pre-entrenadas. Se descargarán así los archivos 'caffemodel' y '.prototxt' en caso del entorno Caffe; o el archivo 'pb' en caso de trabajar con el entorno TensorFlow.
