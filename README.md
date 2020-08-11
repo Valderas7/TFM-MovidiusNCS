@@ -23,7 +23,7 @@ Estudio comparativo de un clasificador de imágenes en Raspberry Pi, de forma qu
 
 ------------
 
-**Redes neuronales pre-entrendas:**
+**Redes neuronales pre-entrenadas:**
 1. Ejecutar el script 'downloader.py' de OpenVINO, el cual descarga las topologías de las red pre-entrenadas. Se descargarán así los archivos 'caffemodel' y '.prototxt' en caso del entorno Caffe; o el archivo 'pb' en caso de trabajar con el entorno TensorFlow.
 
 2. Convertir los archivos de las distintas redes (en formato del *framework* Caffe, ya que es el formato en el que se han descargado las redes a evaluar) en dos archivos de representación intermedia ('.xml' y '.bin') mediante el *Model Optimizer* v7 de OpenVINO (`python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model /classification/xxxx/xxxx.caffemodel --data_type FP32`).
